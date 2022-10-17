@@ -13,10 +13,10 @@ jobs:
       - run: docker build -t sergway/react-test -f ./client/Dockerfile.dev ./client
       - run: docker run -e CI=true sergway/react-test npm test
 
-      - run: docker build -t sergway/multi-client ./client
       - run: docker build -t sergway/multi-nginx ./nginx
       - run: docker build -t sergway/multi-server ./server
       - run: docker build -t sergway/multi-worker ./worker
+      - run: docker build -t sergway/multi-client ./client
 
       - run: docker push sergway/multi-client
       - run: docker push sergway/multi-nginx
